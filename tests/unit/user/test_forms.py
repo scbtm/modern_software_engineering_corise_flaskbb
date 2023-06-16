@@ -129,12 +129,12 @@ class TestChangePasswordForm(object):
 
 class TestChangeUserDetailsForm(object):
     def test_transforms_to_expected_change_object(self):
-        # CoRise TODO: fix this this test so that it passes.
+        # CoRise TODO: (DONE) fix this this test so that it passes.
         # Hint: does the format of the data look right to you?
         data = MultiDict(
             dict(
                 submit=True,
-                birthday="25 06 2000",
+                birthday="2000-06-25",
                 gender="awesome",
                 location="here",
                 website="http://flaskbb.org",
@@ -175,7 +175,7 @@ class TestChangeUserDetailsForm(object):
         # CoRise TODO: fix this this test so that it passes.
         data = dict(
             submit=True,
-            birthday="25 06 2000",
+            birthday="2000-06-25",
             gender="awesome",
             location="here",
             website="http://flaskbb.org",
@@ -198,7 +198,7 @@ class TestChangeUserDetailsForm(object):
     def test_invalid_inputs(self, formdata):
         data = dict(
             submit=True,
-            birthday="25 06 2000",
+            birthday="2000-06-25",
             gender="awesome",
             location="here",
             website="http://flaskbb.org",
