@@ -3,6 +3,9 @@ import datetime as dt
 
 from flaskbb.forum.models import Forum
 from flaskbb.utils.helpers import (
+    to_bytes,
+    to_unicode,
+    redirect_url,
     check_image,
     crop_title,
     format_quote,
@@ -25,6 +28,9 @@ from flaskbb.utils.settings import flaskbb_config
 
 # ADD CODE HERE
 
+def test_to_bytes_and_to_unicode():
+    assert to_unicode(to_bytes(u"¿Cómo está?")) == u"¿Cómo está?"
+    
 ###################################################################
 
 def test_slugify():
